@@ -28,7 +28,7 @@ spec:
           ports:
             - containerPort: 80
         - name: nodejs-web
-          image: aureezzhenx/nodejs-web
+          image: aureezzhenx/($JOB_NAME):v1.($BUILD_ID)
           ports:
             - containerPort: 3000
 
@@ -47,4 +47,4 @@ spec:
       name: nginx
     - port: 3000
       targetPort: 3000
-      name: nodejs-web
+      name: k8s-jenkins-deploy
