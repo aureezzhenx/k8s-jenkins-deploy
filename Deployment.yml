@@ -28,7 +28,7 @@ spec:
           ports:
             - containerPort: 80
         - name: nodejs-web
-          image: aureezzhenx/$IMAGE_NAME:v1.$BUILD_ID
+          image: aureezzhenx/${NAMA_IMAGE}:v1.${VERSION_BUILD}
           ports:
             - containerPort: 3000
 
