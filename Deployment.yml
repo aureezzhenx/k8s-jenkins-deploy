@@ -1,20 +1,36 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-   name: mrdevops
+   name: aureezzhenx
 spec:
    replicas: 2
-   selector:      # tells the controller which pods to watch/belong to
+   selector:
     matchLabels:
-     app: mrdevops
+     app: aureezzhenx
    template:
       metadata:
         labels:
-          app: mrdevops
+          app: aureezzhenx
       spec:
        containers:
-        - name: mrdevops
-          image: shazabtanveer/project #image_name_dockerhub
+        - name: aureezzhenx
+          image: aureezzhenx/k8s-jenkins-deploy
           imagePullPolicy: Always
           ports:
           - containerPort: 80
+---
+
+kind: Service                             
+apiVersion: v1
+metadata:
+  name: aureezzhenx
+  labels:
+    app: aureezzhenx
+spec:
+  ports:
+    - port: 8080                               
+      targetPort: 80                    
+      nodePort: 31200
+  selector:
+    app: aureezzhenx                    
+  type: LoadBalancer
