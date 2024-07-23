@@ -1,11 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: frontend
+
+---
+
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nginx-rs-match-expression
+  name: frontend
+  namespace: frontend
   labels:
     app: frontend
   annotations:
-    description: nginx replica set match expression joji belajar
+    description: frontend image replica set match expression joji belajar
 spec:
   replicas: 3
   selector:
@@ -24,7 +32,7 @@ spec:
     spec:
       containers:
         - name: nodejs-web
-          image: aureezzhenx/$NAMA_IMAGE:v1.$VERSION_BUILD ## SED ENV BEST PRACTICE (not using latest image)
+          image: aureezzhenx/$NAMA_IMAGE:v1.$VERSION_BUILD
           ports:
             - containerPort: 3000
 
@@ -33,11 +41,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-frontend
+  name: service-frontend-loadbalancer
 spec:
+  type: LoadBalancer
   selector:
     app: frontend
   ports:
     - port: 3000
       targetPort: 3000
-      name: k8s-jenkins-deploy
