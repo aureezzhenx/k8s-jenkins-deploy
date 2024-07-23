@@ -1,36 +1,50 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: ReplicaSet
 metadata:
-   name: aureezzhenx
+  name: nginx-rs-match-expression
+  labels:
+    app: frontend
+  annotations:
+    description: nginx replica set match expression joji belajar
 spec:
-   replicas: 2
-   selector:
+  replicas: 3
+  selector:
     matchLabels:
-     app: aureezzhenx
-   template:
-      metadata:
-        labels:
-          app: aureezzhenx
-      spec:
-       containers:
-        - name: aureezzhenx
-          image: aureezzhenx/k8s-jenkins-deploy
-          imagePullPolicy: Always
+      app: frontend
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - frontend
+  template:
+    metadata:
+      name: frontend
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
           ports:
-          - containerPort: 80
+            - containerPort: 80
+        - name: nodejs-web
+          image: aureezzhenx/nodejs-web
+          ports:
+            - containerPort: 3000
+
 ---
 
-kind: Service                             
 apiVersion: v1
+kind: Service
 metadata:
-  name: aureezzhenx
-  labels:
-    app: aureezzhenx
+  name: service-frontend
 spec:
-  ports:
-    - port: 8080                               
-      targetPort: 80                    
-      nodePort: 31200
   selector:
-    app: aureezzhenx                    
-  type: LoadBalancer
+    app: frontend
+  ports:
+    - port: 8080
+      targetPort: 80
+      name: nginx
+    - port: 3000
+      targetPort: 3000
+      name: nodejs-web
