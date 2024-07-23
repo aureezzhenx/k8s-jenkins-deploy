@@ -23,10 +23,6 @@ spec:
         app: frontend
     spec:
       containers:
-        - name: nginx
-          image: nginx
-          ports:
-            - containerPort: 80
         - name: nodejs-web
           image: aureezzhenx/$NAMA_IMAGE:v1.$VERSION_BUILD ## SED ENV BEST PRACTICE (not using latest image)
           ports:
@@ -42,9 +38,6 @@ spec:
   selector:
     app: frontend
   ports:
-    - port: 8080
-      targetPort: 80
-      name: nginx
     - port: 3000
       targetPort: 3000
       name: k8s-jenkins-deploy
