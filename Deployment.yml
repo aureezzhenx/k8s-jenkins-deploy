@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: nodejs-web
-          image: aureezzhenx/$nama_image:v1.$version_build
+          image: aureezzhenx/$NAMA_IMAGE:v1.$VERSION_BUILD
           ports:
             - containerPort: 3000
 
