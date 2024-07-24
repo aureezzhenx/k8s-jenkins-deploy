@@ -6,7 +6,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Application Version 1.1');
+    res.end('Application Version 2.0');
 });
 
 server.listen(port, hostname, () => {
