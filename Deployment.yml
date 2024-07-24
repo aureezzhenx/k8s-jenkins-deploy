@@ -1,14 +1,13 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: frontend
+  name: frontend-deployment
   namespace: frontend
   labels:
     app: frontend
   annotations:
-    description: frontend image replica set match expression joji belajar
+    description: frontend image deployment joji belajar
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: frontend
@@ -43,3 +42,24 @@ spec:
   ports:
     - port: 3000
       targetPort: 3000
+
+---
+
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: frontend-HPA-autoscaller
+spec:
+  minReplicas: 2
+  maxReplicas: 5
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: frontend-deployment
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
