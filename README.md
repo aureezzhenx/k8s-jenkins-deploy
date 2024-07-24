@@ -1,9 +1,1 @@
-asd
-test
-testtttt
-asdasdasd
-asd
-tetetet
-asdasdasasdasd
-
-tesss
+# Deployment or Rollback on Kubernetes cluster using Jenkins
