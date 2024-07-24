@@ -1,4 +1,5 @@
 const http = require('http');
+const process = require("process");
 let version = process.env.VERSION_BUILD;
 
 if (!version) {
