@@ -31,6 +31,7 @@ Keterangan Service di arsitektur:
 - Deployment/ReplicaSet. Default: Deployment akan secara otomatis membuat ReplicaSet, namun di kasus ini saya menggantikan ReplicaSet menjadi Horizontal Pod AutoScaller.
 - Horizontal Pod AutoScaller. Jika CPU Usage di Pod ada di angka rata-rata 70%, maka akan menambah 1 Pod. Jika tidak maka akan berkurang 1 Pod.
 - Load Balancer. Meng-ekspos aplikasi yang ada di Pod Kubernetes Cluster untuk sisi Client.
+- Masing-masing Pod akan dibatasi penggunaan Resourcenya. Batas maksimal penggunaan Resource masing-masing Pod: 1 Core CPU dan 1GB RAM Memory
 
 Setup
 
