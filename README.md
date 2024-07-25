@@ -100,4 +100,6 @@ Deployment Sukses
 
 Hasil Docker Image yang sudah dibuat oleh Job Jenkins, tidak menggunakan versi latest.
 
+https://hub.docker.com/layers/aureezzhenx/k8s-jenkins-deploy/v1.55/images/sha256-2e4b8d7ac2c079500eb8e12a40eb63e3083340e4919f15e02ff314171594de05?context=explore
+
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/build4.png></center>
