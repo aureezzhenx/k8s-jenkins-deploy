@@ -78,6 +78,8 @@ Jenkins akan menerima trigger dari Jenkins jika Developer ada aktifitas Push ke 
 Deployment Sukses
 
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/build3.png></center>
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/sukses1.png></center>
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/sukses2.png></center>
 
 Hasil Docker Image yang sudah dibuat oleh Job Jenkins, tidak menggunakan versi latest.
 
