@@ -16,6 +16,7 @@ Using stacks
 Skenario alur CI/CD
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Skenario%20CICD.png></center></img>
 
+Alur:
 1. Developer melakukan Push ke Git Repository.
 2. Git Repository akan mengirim Request POST ke URL Jenkins yang sudah di Tunnel HTTP PORT 8080 oleh NGROK sebagai Webhook untuk Event Push.
 3. Jenkins menerima Trigger Event Push dari Webhook.
