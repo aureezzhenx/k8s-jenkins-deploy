@@ -46,4 +46,25 @@ Membuat Freestyle Project di Jenkins
 
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/job.png></center> 
 
+Mengatur Job
+
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/job2.png></center>
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/job3.png></center>
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/job4.png></center>
+
+Execute Shell
+```
+# Build container and push to registry (hub.docker)
+docker build -t aureezzhenx/$JOB_NAME:v1.$BUILD_ID .
+docker push aureezzhenx/$JOB_NAME:v1.$BUILD_ID
+
+# Store ENV for versioning image (not using latest tag)
+export NAMA_IMAGE=$JOB_NAME
+export VERSION_BUILD=$BUILD_ID
+
+# Deploy image ke k8s cluster
+cat Deployment.yml | sed 's/$NAMA_IMAGE/'"$JOB_NAME"'/' | sed 's/$VERSION_BUILD/'"$BUILD_ID"'/' | kubectl apply -f -
+```
+
+Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest sebagai best-practicenya, saya memakai Environment Build ID dari Jenkins.
 
