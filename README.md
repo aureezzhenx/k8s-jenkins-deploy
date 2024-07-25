@@ -23,3 +23,8 @@ Skenario alur CI/CD
 
 Arsitektur Kubernetes Cluster
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Arsitektur%20Kubernetes%20Cluster.png></center></img>
+
+Keterangan Service dan Objek di arsitektur:
+- Deployment/ReplicaSet. Default: objek Deployment akan secara otomatis membuat ReplicaSet, namun di kasus ini saya menggantikan objek ReplicaSet menjadi Horizontal Pod AutoScaller.
+- Horizontal Pod AutoScaller. Jika CPU Usage di Pod ada di angka rata-rata 70%, maka akan menambah 1 Pod.
+- Load Balancer. Untuk meng-ekspos Kubernetes Cluster dari sisi Client.
