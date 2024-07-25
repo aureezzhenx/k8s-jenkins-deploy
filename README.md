@@ -17,7 +17,7 @@ Using stacks:
 ## Skenario alur CI/CD
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Skenario%20CICD.png></center></img>
 
-Alur:
+### Alur:
 1. Developer melakukan Push ke Git Repository.
 2. Git Repository akan mengirim Request POST ke URL Jenkins yang sudah di Tunnel HTTP PORT 8080 oleh NGROK sebagai Webhook untuk Event Push.
 3. Jenkins menerima Trigger Event Push dari Webhook.
@@ -28,7 +28,7 @@ Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest 
 ## Arsitektur Kubernetes Cluster
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Arsitektur%20Kubernetes%20Cluster.png></center></img>
 
-Keterangan Service di arsitektur:
+### Keterangan Service di arsitektur:
 - Deployment/ReplicaSet. Default: Deployment akan secara otomatis membuat ReplicaSet, namun di kasus ini saya menggantikan ReplicaSet menjadi Horizontal Pod AutoScaller.
 - Horizontal Pod AutoScaller. Jika CPU Usage di Pod ada di angka rata-rata 70%, maka akan menambah 1 Pod. Jika tidak maka akan berkurang 1 Pod.
 - Load Balancer. Meng-ekspos aplikasi yang ada di Pod Kubernetes Cluster untuk sisi Client.
