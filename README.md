@@ -39,12 +39,12 @@ Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest 
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Arsitektur%20Kubernetes%20Cluster.png></center></img>
 
 ### Keterangan Service di arsitektur:
-- Deployment/ReplicaSet. Default: Deployment akan secara otomatis membuat ReplicaSet, namun di kasus ini saya menggantikan ReplicaSet menjadi Horizontal Pod AutoScaller.
-- Masing-Masing Pod akan mengirim informasi penggunaan Resource Hardware ke services Metrics Server sebagai acuan parameter Trigger untuk service Horizontal Pod AutoScaller
-- Horizontal Pod AutoScaller. Jika CPU Usage di Pod ada di angka rata-rata 70%, maka akan menambah 1 Pod. Jika tidak maka akan berkurang 1 Pod. Minimal Replica: 2, Maksimal Replica: 5
-- Masing-masing Pod akan dibatasi penggunaan Resourcenya. Batas maksimal penggunaan Resource masing-masing Pod: 1 Core CPU dan 1GB RAM Memory
-- Load Balancer. Meng-ekspos aplikasi yang ada di Pod Kubernetes Cluster untuk sisi Client.
-- Semua service ada di satu namespace yang sama, yaitu backend.
+- [Deployment/ReplicaSet](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L8). Default: Service Kubernetes Deployment akan secara otomatis membuat ReplicaSet, namun di kasus ini saya menggantikan ReplicaSet menjadi [Horizontal Pod AutoScaller](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L62).
+- Masing-Masing Pod akan mengirim informasi penggunaan Resource Hardware ke services [Metrics Server](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L74) sebagai acuan parameter Trigger untuk service [Horizontal Pod AutoScaller](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L62).
+- [Horizontal Pod AutoScaller](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L62). Jika CPU Usage di Pod ada di angka rata-rata 70%, maka akan menambah 1 Pod. Jika tidak maka akan berkurang 1 Pod. Minimal Replica: 2, Maksimal Replica: 5
+- Masing-masing Pod akan dibatasi penggunaan Resourcenya. Batas maksimal penggunaan Resource masing-masing Pod: [1 Core CPU dan 1GB RAM Memory](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L37)
+- [Load Balancer](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L47). Meng-ekspos aplikasi yang ada di Pod Kubernetes Cluster untuk sisi Client.
+- Semua service ada di satu Namespace yang sama, yaitu [backend](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L1).
 
 
 Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
