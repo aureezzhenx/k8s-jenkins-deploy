@@ -13,6 +13,8 @@ Using stacks:
 - Docker
 - Kubernetes (minikube & kubectl)
 
+Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
+
 
 ## Skenario alur CI/CD
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Skenario%20CICD.png></center></img>
