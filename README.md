@@ -44,6 +44,7 @@ Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest 
 - Horizontal Pod AutoScaller. Jika CPU Usage di Pod ada di angka rata-rata 70%, maka akan menambah 1 Pod. Jika tidak maka akan berkurang 1 Pod. Minimal Replica: 2, Maksimal Replica: 5
 - Masing-masing Pod akan dibatasi penggunaan Resourcenya. Batas maksimal penggunaan Resource masing-masing Pod: 1 Core CPU dan 1GB RAM Memory
 - Load Balancer. Meng-ekspos aplikasi yang ada di Pod Kubernetes Cluster untuk sisi Client.
+- Semua service ada di satu namespace yang sama, yaitu backend.
 
 
 Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
