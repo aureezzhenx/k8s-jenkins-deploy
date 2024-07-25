@@ -40,3 +40,7 @@ Tunnel Port 8080 menggunakan NGROK. Port 8080 adalah Jenkins
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/webhook.png></center> 
 
 Input Payload URL Webhook yang sudah di port-forward oleh NGROK di pengaturan Repository.
+
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/job.png></center> 
+
+Membuat Freestyle Project di Jenkins
