@@ -19,7 +19,9 @@ Skenario alur CI/CD
 1. Developer melakukan Push ke Git Repository.
 2. Git Repository akan mengirim Request POST ke URL Jenkins yang sudah di Tunnel HTTP PORT 8080 oleh NGROK sebagai Webhook untuk Event Push.
 3. Jenkins menerima Trigger Event Push dari Webhook.
-4. Jenkins akan melakukan 3 Job, yaitu membuat Image dari Dockerfile, lalu Push Image ke Container Registery, lalu Apply Deployment ke Kubernetes Cluster. Untuk di kasus ini, Container Registry yang dipakai adalah Docker Hub.
+4. Jenkins akan melakukan 3 Job, yaitu membuat Image dari Dockerfile namun tidak memakai versi latest (best practice), lalu Push Image ke Container Registery, lalu Apply Deployment ke Kubernetes Cluster. Untuk di kasus ini, Container Registry yang dipakai adalah Docker Hub.
+
+Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest sebagai best-practicenya, saya memakai Environment Build ID dari Jenkins.
 
 Arsitektur Kubernetes Cluster
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Arsitektur%20Kubernetes%20Cluster.png></center></img>
