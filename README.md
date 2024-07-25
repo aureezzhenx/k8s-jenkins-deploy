@@ -13,6 +13,12 @@ Using stacks:
 - Docker
 - Kubernetes (minikube & kubectl)
 
+Table of Context
+- [Skenario Alur CI/CD](https://github.com/aureezzhenx/k8s-jenkins-deploy#skenario-alur-cicd)
+- [Arsitektur Kubernetes Cluster](https://github.com/aureezzhenx/k8s-jenkins-deploy#arsitektur-kubernetes-cluster)
+- [Setup Job Jenkins](https://github.com/aureezzhenx/k8s-jenkins-deploy#setup)
+- [Deployment Phase](https://github.com/aureezzhenx/k8s-jenkins-deploy#deployment-phase)
+
 Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
 
 
