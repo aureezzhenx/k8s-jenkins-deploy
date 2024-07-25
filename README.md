@@ -33,4 +33,4 @@ Setup
 
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/ngrok.png></center>
 
-Tunnel port 8080 menggunakan NGROK. 
+Tunnel Port 8080 menggunakan NGROK. Port 8080 adalah Jenkins
