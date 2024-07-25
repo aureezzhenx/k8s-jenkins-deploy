@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a4ab5a71-ccc4-4397-ad1f-755d1f106a9f)# Real-Time Deployment Kubernetes using CI/CD Jenkins on Localhost
+# Real-Time Deployment Kubernetes using CI/CD Jenkins on Localhost
 
 ![jenkins-kubernetes](https://github.com/user-attachments/assets/4d68c1b4-b72c-43f2-ad22-c6dda862d31b)
 
