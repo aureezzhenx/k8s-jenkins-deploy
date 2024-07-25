@@ -68,3 +68,17 @@ cat Deployment.yml | sed 's/$NAMA_IMAGE/'"$JOB_NAME"'/' | sed 's/$VERSION_BUILD/
 
 Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest sebagai best-practicenya, saya memakai Environment Build ID dari Jenkins.
 
+Deployment Phase
+
+Jenkins akan menerima trigger dari Jenkins jika Developer ada aktifitas Push ke Repository. Di Deployment Phase ini untuk Build ID nya adalah 55
+
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/build1.png></center> 
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/build2.png></center>
+
+Deployment Sukses
+
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/build3.png></center>
+
+Hasil Docker Image yang sudah dibuat oleh Job Jenkins, tidak menggunakan versi latest.
+
+<center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/build3.png></center>
