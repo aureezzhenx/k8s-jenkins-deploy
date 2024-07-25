@@ -74,7 +74,7 @@ Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest 
 
 ## Deployment Phase
 
-Jenkins akan menerima trigger dari Jenkins jika Developer ada aktifitas Push ke Repository. Di Deployment Phase ini untuk Build ID nya adalah 55
+Jenkins akan menerima trigger dari Webhook jika Developer ada aktifitas Push ke Repository. Di Deployment Phase ini untuk Build ID nya adalah 55
 
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/build1.png></center> 
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/build2.png></center>
