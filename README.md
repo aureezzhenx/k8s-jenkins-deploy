@@ -33,6 +33,8 @@ Keterangan Service di arsitektur:
 - Load Balancer. Meng-ekspos aplikasi yang ada di Pod Kubernetes Cluster untuk sisi Client.
 - Masing-masing Pod akan dibatasi penggunaan Resourcenya. Batas maksimal penggunaan Resource masing-masing Pod: 1 Core CPU dan 1GB RAM Memory
 
+Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
+
 Setup
 
 Tunnel Port 8080 menggunakan NGROK. Port 8080 adalah Jenkins
