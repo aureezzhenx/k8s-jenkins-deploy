@@ -20,6 +20,7 @@ Table of Context
 - [Deployment Phase](https://github.com/aureezzhenx/k8s-jenkins-deploy#deployment-phase)
 - [Not Using Latest Tag](https://github.com/aureezzhenx/k8s-jenkins-deploy#setup)
 - [Computational Resource](https://github.com/aureezzhenx/k8s-jenkins-deploy#arsitektur-kubernetes-cluster)
+- [Rollback Deployment](https://github.com/aureezzhenx/k8s-jenkins-deploy#arsitektur-kubernetes-cluster)
 
 Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
 
