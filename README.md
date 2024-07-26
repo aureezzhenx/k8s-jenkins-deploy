@@ -7,7 +7,7 @@ _**Portofolio oleh Jouzie Aulia Rezky**_
 https://www.linkedin.com/in/aureezz/
 
 Using stacks:
-- WSL Ubuntu Distro
+- Windows Subsytem Linux Ubuntu Distro
 - Jenkins
 - Ngrok
 - Docker Desktop (Windows)
