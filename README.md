@@ -33,8 +33,6 @@ Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Dep
 3. Jenkins menerima Trigger Event Push dari Webhook.
 4. Jenkins akan melakukan 3 Job, yaitu membuat Image dari Dockerfile namun tidak memakai versi latest (best practice), lalu Push Image ke Container Registery, lalu Apply Deployment ke Kubernetes Cluster. Untuk di kasus ini, Container Registry yang dipakai adalah Docker Hub.
 
-Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest sebagai best-practicenya, saya memakai Environment Build ID dari Jenkins.
-
 ## Arsitektur Kubernetes Cluster
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Arsitektur%20Kubernetes%20Cluster.png></center></img>
 
@@ -50,6 +48,14 @@ Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest 
 Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
 
 ## Setup
+
+Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest sebagai best-practicenya, saya memakai Environment Build ID dari Jenkins.
+
+[Deployment.yml Line 34](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/45f5227855073d57abc51d92501ebaccc80f8349/Deployment.yml#L34C11-L34C59)
+
+```
+image: aureezzhenx/$NAMA_IMAGE:v1.$VERSION_BUILD
+```
 
 Tunnel Port 8080 menggunakan NGROK. Port 8080 adalah Jenkins
 
