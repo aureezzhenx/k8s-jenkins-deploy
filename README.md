@@ -1,6 +1,6 @@
-# Real-Time Deployment Kubernetes using CI/CD Jenkins on Localhost
-
 ![jenkins-kubernetes](https://github.com/user-attachments/assets/4d68c1b4-b72c-43f2-ad22-c6dda862d31b)
+
+_**Real-Time Deployment Kubernetes using CI/CD Jenkins on Localhost**_
 
 _**Portofolio oleh Jouzie Aulia Rezky**_
 
