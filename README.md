@@ -40,6 +40,9 @@ Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Dep
 
 Karena Defaultnya Deployment di Kubernetes itu adalah otomatis membuat ReplicaSet, jadi Deployment Kubernetes itu tidak ada Downtime, karena alur Deployment di Kubernetes hanya meng-ganti ReplicaSet yang sebelumnya sudah ada diganti jadi ReplicaSet yang baru dari hasil Deployment Kubernetes, lalu akan Terminating ReplicaSet yang sebelumnya.
 
+![image](https://github.com/user-attachments/assets/f93f8d02-91b2-4bf5-a655-bfe22e81c226)
+
+
 ## Arsitektur Kubernetes Cluster
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Arsitektur%20Kubernetes%20Cluster.png></center></img>
 
