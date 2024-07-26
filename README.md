@@ -10,7 +10,7 @@ Using stacks:
 - WSL Ubuntu Distro
 - Jenkins
 - Ngrok
-- Docker
+- Docker Desktop (Windows)
 - Kubernetes (minikube & kubectl)
 
 Table of Context
