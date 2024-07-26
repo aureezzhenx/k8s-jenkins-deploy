@@ -22,6 +22,10 @@ Table of Context
 - [Computational Resource](https://github.com/aureezzhenx/k8s-jenkins-deploy#arsitektur-kubernetes-cluster)
 - [Rollback Deployment](https://github.com/aureezzhenx/k8s-jenkins-deploy#arsitektur-kubernetes-cluster)
 
+```
+Portofolio ini saya buat semirip mungkin dengan Real-Case yang terjadi di Production.
+```
+
 Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
 
 
@@ -34,7 +38,7 @@ Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Dep
 3. Jenkins menerima Trigger Event Push dari Webhook.
 4. Jenkins akan melakukan 3 Job, yaitu membuat Image dari Dockerfile namun tidak memakai versi latest (best practice), lalu Push Image ke Container Registery, lalu Apply Deployment ke Kubernetes Cluster. Untuk di kasus ini, Container Registry yang dipakai adalah Docker Hub.
 
-Karena Defaultnya Deployment di Kubernetes itu adalah otomatis membuat ReplicaSet, Deployment Kubernetes tidak ada Downtime, karena alur Deployment di Kubernetes hanya Switching ReplicaSet yang sebelumnya sudah ada diganti jadi ReplicaSet yang baru dari hasil Deployment, lalu akan Terminating ReplicaSet yang sebelumnya.
+Karena Defaultnya Deployment di Kubernetes itu adalah otomatis membuat ReplicaSet, jadi Deployment Kubernetes itu tidak ada Downtime, karena alur Deployment di Kubernetes hanya meng-ganti ReplicaSet yang sebelumnya sudah ada diganti jadi ReplicaSet yang baru dari hasil Deployment Kubernetes, lalu akan Terminating ReplicaSet yang sebelumnya.
 
 ## Arsitektur Kubernetes Cluster
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Arsitektur%20Kubernetes%20Cluster.png></center></img>
@@ -47,9 +51,9 @@ Karena Defaultnya Deployment di Kubernetes itu adalah otomatis membuat ReplicaSe
 - [Load Balancer](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L47). Meng-ekspos aplikasi yang ada di Pod Kubernetes Cluster untuk sisi Client.
 - Semua service ada di satu Namespace yang sama, yaitu [backend](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L1).
 
-Penggunaan Horizontal Pod Autoscaler sangat membantu untuk mengatasi masalah Backpressure jika aplikasi yang ada di Pod menerima Traffic terlalu banyak. 
+Penggunaan Horizontal Pod Autoscaler sangat membantu untuk mengatasi masalah Backpressure di Production jika aplikasi yang ada di Pod menerima Traffic terlalu banyak. 
 
-Mengapa hanya 1GB Memory dan 1 Core yang didapatkan setiap Pod? Karena kemampuan komputer saya meng-running kasus ini terlalu berat. Adapun jika di Case Production, limitasi Resource ini sangat perlu agar Resource tidak terpakai oleh aplikasi saja, masih ada Free Resource untuk System Operasinya.
+Mengapa hanya 1GB Memory dan 1 Core yang didapatkan setiap Pod? Karena kemampuan komputer saya meng-running kasus ini terlalu berat. Adapun jika di Case Production, limitasi Resource ini sangat perlu agar Resource tidak terpakai oleh aplikasi saja, masih ada Free Resource untuk sistem operasinya.
 
 Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
 
