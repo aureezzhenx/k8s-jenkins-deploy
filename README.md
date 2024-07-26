@@ -53,6 +53,8 @@ Image Version Docker yang dibuat oleh Job Jenkins saya tidak memakai tag Latest 
 
 [Deployment.yml Line 34](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/45f5227855073d57abc51d92501ebaccc80f8349/Deployment.yml#L34C11-L34C59)
 
+Referensi: https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project#Buildingasoftwareproject-belowJenkinsSetEnvironmentVariables
+
 ```
 # Execute Shell
 export NAMA_IMAGE=$JOB_NAME
@@ -63,8 +65,6 @@ export VERSION_BUILD=$BUILD_ID
 # deployment.yml line 34
 image: aureezzhenx/$NAMA_IMAGE:v1.$VERSION_BUILD
 ```
-
-Referensi: https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project#Buildingasoftwareproject-belowJenkinsSetEnvironmentVariables
 
 Tunnel Port 8080 menggunakan NGROK. Port 8080 adalah Jenkins
 
