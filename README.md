@@ -45,7 +45,7 @@ Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Dep
 - [Load Balancer](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L47). Meng-ekspos aplikasi yang ada di Pod Kubernetes Cluster untuk sisi Client.
 - Semua service ada di satu Namespace yang sama, yaitu [backend](https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/adc63888855c0b77d623ac5314dadf1f691d477a/Deployment.yml#L1).
 
-Penggunaan Horizontal Pod Autoscaler sangat membantu untuk masalah Backpressure jika aplikasi yang ada di Pod menerima Traffic terlalu banyak.
+Penggunaan Horizontal Pod Autoscaler sangat membantu untuk masalah Backpressure jika aplikasi yang ada di Pod menerima Traffic terlalu banyak. Mengapa hanya 1GB Memory dan 1 Core yang didapatkan setiap Pod? Karena kemampuan komputer saya meng-running kasus ini terlalu berat. Adapun jika di Case Production, limitasi Resource ini sangat perlu agar Resource tidak terpakai oleh aplikasi saja, masih ada Free Resource untuk System Operasinya.
 
 Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Deployment.yml
 
