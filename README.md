@@ -34,7 +34,7 @@ Kubernetes YAML: https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/Dep
 3. Jenkins menerima Trigger Event Push dari Webhook.
 4. Jenkins akan melakukan 3 Job, yaitu membuat Image dari Dockerfile namun tidak memakai versi latest (best practice), lalu Push Image ke Container Registery, lalu Apply Deployment ke Kubernetes Cluster. Untuk di kasus ini, Container Registry yang dipakai adalah Docker Hub.
 
-Karena Defaultnya Service Deployment di Kubernetes itu adalah Otomatis membuat ReplicaSet, Deployment Kubernetes tidak ada Downtime, karena alur Deployment di Kubernetes hanya Switching ReplicaSet yang sebelumnya sudah ada diganti jadi ReplicaSet yang baru dari hasil Deployment, lalu akan Terminating ReplicaSet yang sebelumnya.
+Karena Defaultnya Deployment di Kubernetes itu adalah otomatis membuat ReplicaSet, Deployment Kubernetes tidak ada Downtime, karena alur Deployment di Kubernetes hanya Switching ReplicaSet yang sebelumnya sudah ada diganti jadi ReplicaSet yang baru dari hasil Deployment, lalu akan Terminating ReplicaSet yang sebelumnya.
 
 ## Arsitektur Kubernetes Cluster
 <center><img src=https://github.com/aureezzhenx/k8s-jenkins-deploy/blob/main/assets/Arsitektur%20Kubernetes%20Cluster.png></center></img>
